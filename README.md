@@ -26,12 +26,16 @@ Here are some of the most commonly used Terraform commands along with their desc
 | `terraform fmt`        | Formats the Terraform configuration files to a canonical format.            |
 | `terraform show`       | Provides human-readable output from a state or plan file.                   |
 | `terraform output`     | Extracts the value of an output variable from the state file.               |
+| `terraform output <name of specific output>` | Extracts the value of a specific output variable from the state file. |
 | `terraform state`      | Advanced state management commands.                                         |
 | `terraform import`     | Imports existing infrastructure into your Terraform state.                  |
 | `terraform taint`      | Manually marks a resource for recreation.                                   |
 | `terraform untaint`    | Manually unmarks a resource as tainted.                                     |
 | `terraform graph`      | Generates a visual representation of the configuration.                     |
 | `terraform workspace`  | Manages workspaces.                                                         |
+| `terraform providers`  | Displays information about the providers required for the configuration.    |
+| `terraform refresh`    | Updates the state file with the real infrastructure.                        |
+
 
 ### Using Variables in Terraform Commands
 
