@@ -21,6 +21,7 @@ Here are some of the most commonly used Terraform commands along with their desc
 | `terraform apply`      | Applies the changes required to reach the desired state of the configuration. |
 | `terraform apply --auto-approve=true` | Applies the changes required to reach the desired state of the configuration without prompting for confirmation. |
 | `terraform apply --target <name of resource / module>` | Applies changes only to the specified resource or module.                  |
+| `terraform apply --replace=<name of resource> --auto-approve=true` | Replaces the specified resource and applies the changes without prompting for confirmation. |
 | `terraform destroy`    | Destroys the Terraform-managed infrastructure.                              |
 | `terraform validate`   | Validates the Terraform configuration files.                                |
 | `terraform fmt`        | Formats the Terraform configuration files to a canonical format.            |
@@ -31,14 +32,15 @@ Here are some of the most commonly used Terraform commands along with their desc
 | `terraform state mv <name of specific resource SOURCE> <name of specific resource DESTINATION>`      | Moves an item in the state file to a new address. |
 | `terraform state show <name of specific resource>`      | Advanced state management commands for a specific resource. |
 | `terraform state rm <name of specific resource>`      | Removes a specific resource from the state file. |
+| `terraform state list` | Lists all resources in the Terraform state file.                              |
 | `terraform import`     | Imports existing infrastructure into your Terraform state.                  |
-| `terraform taint`      | Manually marks a resource for recreation.                                   |
-| `terraform untaint`    | Manually unmarks a resource as tainted.                                     |
 | `terraform graph`      | Generates a visual representation of the configuration.                     |
 | `terraform graph \| dot -Tsvg > graph.svg`      | Generates a visual representation of the configuration in svf file.                     |
 | `terraform workspace`  | Manages workspaces.                                                         |
 | `terraform providers`  | Displays information about the providers required for the configuration.    |
 | `terraform refresh`    | Updates the state file with the real infrastructure.                        |
+| `terraform taint <name of resource>` | Marks a specific resource for recreation during the next `terraform apply`. |
+| `terraform untaint <name of resource>` | Removes the taint from a specific resource, preventing it from being recreated during the next `terraform apply`. |
 
 
 ### Using Variables in Terraform Commands
@@ -103,4 +105,12 @@ Here are some examples of how to use variables with common Terraform commands:
     }
     ```
 
-    
+    ### Connecting to AWS Instance
+
+    To connect to an instance, you can use the following command:
+
+    ```sh
+    $ ssh -i private-key.pem user@instance-ip
+    ```
+
+    Replace `private-key.pem` with the path to your SSH private key file, `user` with the username for the instance, and `instance-ip` with the public IP address of the instance.

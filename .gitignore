@@ -11,3 +11,4 @@ terraform.tfstate*
 .tflint.hcl
 practica_secret/
 .vscode
+*.txt

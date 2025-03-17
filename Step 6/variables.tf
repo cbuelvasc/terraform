@@ -28,3 +28,13 @@ variable "key_name" {
   description = "Key pair name"
   type        = string
 }
+
+variable "sg_ingress_cidr" {
+  description = "CIDR blocks for the security group ingress rules"
+  type        = string
+}
+
+variable "ec2_specs" {
+  description = "EC2 instance specifications"
+  type        = map(string)
+}
